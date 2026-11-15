@@ -1,25 +1,5 @@
 {
-  "users": [
-    {
-      "id": "1790005145380",
-      "name": "Mess Administrator",
-      "email": "admin@mess.local",
-      "password": "$2b$10$N4k4BbkGD66i7W3TcQZxFubKa0HlLlUDJG.MS43icU36mSLoX/192",
-      "role": "admin",
-      "createdAt": "2026-09-21T15:39:05.467Z"
-    },
-    {
-      "id": "b3817c88-df90-46af-9874-e7089f51237c",
-      "name": "y.suhail",
-      "username": "suhail",
-      "salt": "b4d11d58ef336cfdb8f70c61b09e4cde",
-      "passwordHash": "ad1731d7a9c0ab8e429f2655ee38dae755de0083d44079871f894eea4b220c2d7dafeee3f9417e43d966fb87f1acb432e6edecfd33dadd8a58b1ef5b9ac49ab7",
-      "role": "student",
-      "hostel": "Sophia",
-      "foodPreference": "Vegetarian",
-      "createdAt": "2026-11-11T16:27:44.856Z"
-    }
-  ],
+  "users": [],
   "menus": [],
   "feedback": [],
   "announcements": [],
@@ -221,17 +201,7 @@
       "hostel": "All"
     }
   ],
-  "admins": [
-    {
-      "id": "5076dd74-1350-40fd-96c1-5c8ab128a6c1",
-      "name": "messadmin",
-      "username": "messadmin",
-      "salt": "171a7c47d4075cca76c47dea5dd69871",
-      "passwordHash": "f6040b0240d087e6b72da12c072b54ab35fdfd045837f379ed453d27c10774e8418584c37dfc0e32343bf81140e6795324e4878dffbe6e28a65b875348767d01",
-      "role": "admin",
-      "createdAt": "2026-11-08T16:27:24.966Z"
-    }
-  ],
+  "admins": [],
   "awayRequests": [],
   "mealRegistrations": []
 }
