@@ -47,6 +47,7 @@ body{
     gap:14px;
 }
 
+.logo-icon svg,.feature-icon svg,.input-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .logo-icon{
     width:55px;
     height:55px;
@@ -105,6 +106,7 @@ body{
     font-size:14px;
 }
 
+.feature-icon svg{width:21px;height:21px}
 .feature-icon{
     width:39px;
     height:39px;
@@ -164,6 +166,8 @@ label{
 
 .input-box{position:relative}
 
+.input-box .input-icon{position:absolute;left:15px;top:15px;width:18px;height:18px;color:#64748b}
+.input-box .input-icon svg{width:18px;height:18px}
 .input-box span{
     position:absolute;
     left:15px;
@@ -257,16 +261,16 @@ input:focus{
     <section class="left">
 
         <div class="logo">
-            <div class="logo-icon">ðŸ½ï¸</div>
+            <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18M16 3v18M16 3c3 2 4 5 4 8h-4" /></svg></div>
             <div>
                 <h2>Campus Mess System</h2>
-                <p>SMART MESS â€¢ BETTER SERVICE</p>
+                <p>SMART MESS | BETTER SERVICE</p>
             </div>
         </div>
 
         <div class="content">
 
-            <div class="tag">MESS â€¢ MENU â€¢ FEEDBACK</div>
+            <div class="tag">MESS | MENU | FEEDBACK</div>
 
             <h1>
                 Smart Mess<br>
@@ -284,22 +288,22 @@ input:focus{
             <div class="features">
 
                 <div class="feature">
-                    <div class="feature-icon">ðŸ›</div>
+                    <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5" /></svg></div>
                     <span>Daily breakfast, lunch and dinner menus</span>
                 </div>
 
                 <div class="feature">
-                    <div class="feature-icon">ðŸ’¬</div>
+                    <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4zM8 9h8M8 13h5" /></svg></div>
                     <span>Student food quality and service feedback</span>
                 </div>
 
                 <div class="feature">
-                    <div class="feature-icon">ðŸ </div>
+                    <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3zM9 20v-6h6v6" /></svg></div>
                     <span>Hostel-based mess management</span>
                 </div>
 
                 <div class="feature">
-                    <div class="feature-icon">ðŸ“Š</div>
+                    <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V4M4 20h17M8 17v-5h3v5M14 17V8h3v9M19 17V5h2v12" /></svg></div>
                     <span>Organized administration and management</span>
                 </div>
 
@@ -307,7 +311,7 @@ input:focus{
         </div>
 
         <div class="footer">
-            Â© 2026 Campus Mess System. All Rights Reserved.
+            Copyright 2026 Campus Mess System. All Rights Reserved.
         </div>
 
     </section>
@@ -327,7 +331,7 @@ input:focus{
             <div class="group">
                 <label for="username">Username</label>
                 <div class="input-box">
-                    <span>ðŸ‘¤</span>
+                    <span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
                     <input
                         type="text"
                         id="username"
@@ -340,7 +344,7 @@ input:focus{
             <div class="group">
                 <label for="password">Password</label>
                 <div class="input-box">
-                    <span>ðŸ”’</span>
+                    <span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
                     <input
                         type="password"
                         id="password"
@@ -351,7 +355,7 @@ input:focus{
             </div>
 
             <button type="submit" class="login-btn">
-                Login to Your Account â†’
+                Login to Your Account
             </button>
 
             <div id="message" role="status"></div>
