@@ -23,6 +23,20 @@ const studentOnly = (req, res, next) => req.session.user?.role === "student"
 const adminOnly = (req, res, next) => req.session.user?.role === "admin"
   ? next() : res.status(403).json({ success: false, message: "Admin access only." });
 
+app.post("/api/admin/setup", (req, res) => {
+  const setupKey = String(req.body?.setupKey || "");
+  const expectedKey = String(process.env.ADMIN_SETUP_KEY || "");
+  if (!expectedKey) return res.status(503).json({ success:false, message:"Admin setup is not configured on the server." });
+  const supplied = Buffer.from(setupKey);
+  const expected = Buffer.from(expectedKey);
+  if (supplied.length !== expected.length || !crypto.timingSafeEqual(supplied, expected))
+    return res.status(403).json({ success:false, message:"Invalid setup key." });
+  if (db.loadDatabase().admins.length > 0)
+    return res.status(409).json({ success:false, message:"An admin account already exists." });
+  const result = db.createAdmin({ username:req.body?.username, password:req.body?.password });
+  if (!result.success) return res.status(400).json(result);
+  res.status(201).json(result);
+});
 app.get("/api/me", (req, res) => res.json({ success: true, user: req.session.user || null }));
 app.post("/api/register", (req, res) => {
   try { res.json(db.registerUser(req.body || {})); }
