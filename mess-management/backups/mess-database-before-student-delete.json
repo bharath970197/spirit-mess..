@@ -1,0 +1,450 @@
+{
+  "users": [
+    {
+      "id": "1790005145380",
+      "name": "Mess Administrator",
+      "email": "admin@mess.local",
+      "password": "$2b$10$N4k4BbkGD66i7W3TcQZxFubKa0HlLlUDJG.MS43icU36mSLoX/192",
+      "role": "admin",
+      "createdAt": "2026-09-21T15:39:05.467Z"
+    },
+    {
+      "id": "1790005182865",
+      "name": "suhail",
+      "email": "suhail@gmail.com",
+      "password": "$2b$10$TuXUVsNZ2lPPf3Q5hGxAweX8i3aAgjPktpCfYfkFgebJNfTUuMLVS",
+      "role": "student",
+      "createdAt": "2026-09-21T15:39:42.936Z"
+    },
+    {
+      "id": "9da3d949-ab69-424c-bf5e-81984dcd5544",
+      "name": "y.suhail",
+      "username": "suhail",
+      "salt": "ddec936e21ebe5ebbd342b0a765943ac",
+      "passwordHash": "d72364266fd40e5bc55b70df287615511b06cf9236493f1624580d8a560ba9203e461eb86832fb7926cd990fefc2bedcfdac371b67448ff721c583cf3fbcccb7",
+      "hostel": "Sophia",
+      "foodPreference": "Vegetarian",
+      "role": "student",
+      "createdAt": "2026-11-08T13:09:20.642Z"
+    },
+    {
+      "id": "5f394c24-8f8d-4993-b59b-b5e35d952f3f",
+      "name": "sulthan",
+      "username": "sulthan",
+      "salt": "ee8fa2233bf362b359311546a918fcf3",
+      "passwordHash": "312afd6efdec44f64bf598e5c6dec5b8a99ee9a00d3a82ae74bb5e7ff8447185665d34231aad2b3473a37a85a9ac93a319dc4b9c5ff20cbfefae9611822563ca",
+      "hostel": "Sophia",
+      "foodPreference": "Non-Vegetarian",
+      "role": "student",
+      "createdAt": "2026-11-08T14:01:44.614Z"
+    },
+    {
+      "id": "b3414b45-42c3-41f2-8048-aa2ab0b81a86",
+      "name": "vishnu",
+      "username": "vishnu",
+      "salt": "4113b6f7706b3bf316224dbf669745ff",
+      "passwordHash": "a4b56e70fc84935e884e1789c329412bc4c4fb3d7d842c372363ab83e2b5a795725dd2f53b6b6f8f9ab3235808e1b308fded59d0456bdc66c3018c137035f2ac",
+      "hostel": "Cicily",
+      "foodPreference": "Non-Vegetarian",
+      "role": "student",
+      "createdAt": "2026-11-08T16:55:39.225Z"
+    },
+    {
+      "id": "e9efcc7b-dce1-4ceb-beeb-dee692e13c11",
+      "name": "fazil",
+      "username": "mdfazil",
+      "salt": "988956d95bf731b60fcab9c5def716e3",
+      "passwordHash": "ce401b353bde3d4ce664ccc0fd8ab5f8b40d870eaffcbcb7832187aea17497a54d464cbc73ca6718828540a392701136a39bb8f35a8cf992482f25bae63fadc5",
+      "role": "student",
+      "hostel": "Joseph",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-10T15:45:09.386Z"
+    },
+    {
+      "id": "be2cd5eb-14e7-45d6-9daa-ccd3d98b7a1e",
+      "name": "maahira",
+      "username": "maahira1234",
+      "salt": "56bdd33d02e6cb228ea7adbf1ed5e58b",
+      "passwordHash": "a30e3c5f1c6648189df7658b9d4bf5760504b218b7755091158281bfd9de15755825493b0607f9826a30c9c2caada23b44cd6098eab282ad1f3e484cd65cbb3d",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-11T02:33:00.028Z"
+    },
+    {
+      "id": "b34f5e21-8cb5-4ce5-b142-76b3b936f603",
+      "name": "mohana priya",
+      "username": "mp123456",
+      "salt": "8469402966393f2458b470eeec8cabc2",
+      "passwordHash": "8b5ca86e915698c63393d2794c8060e5a94acf2cfc914f469f9f991c0d80998717cbcd891839039440161089e520ecfe25372d72f83e39720746052dab85e230",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Vegetarian",
+      "createdAt": "2026-11-11T02:34:52.865Z"
+    },
+    {
+      "id": "05fde923-25a4-47f2-aedb-9e1b0ae858e7",
+      "name": "daaliyah",
+      "username": "doli1234",
+      "salt": "3cedbc98a65a7799efb1eae3b359352c",
+      "passwordHash": "64caeb4846c68ba265c1b94a3a251ba25b3563fdfc35e3095b81dac2d07c13bc01029420b2b933ebf40506764d7dc74ba61dd8954ecda164be35d64b72be86b2",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-11T02:36:37.298Z"
+    },
+    {
+      "id": "e47c7df2-b9bf-48b0-af22-839aca1fb772",
+      "name": "ambika",
+      "username": "ambika1234",
+      "salt": "0a252938dbbda6e364a1cf882878307c",
+      "passwordHash": "562938b99301ab08138bae6c4c40b0e0d1d2bccdacbe45b6a57560c4b5eb4d82ca761771fea789bed476f88df3cfda4cd2a15d59b46a0a1a4bc64a157ecb7fc6",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Vegetarian",
+      "createdAt": "2026-11-11T02:37:25.537Z"
+    },
+    {
+      "id": "88939670-7f74-48f6-a1c7-817006ec0994",
+      "name": "anitha",
+      "username": "anitha1234",
+      "salt": "3ad7fef07d8bbe1a771dbf1a97ba4736",
+      "passwordHash": "a5003d4f1dead90c0e3130a8e06fa0881ae557f8f7265b102811cb79de06d4d24c7cb76215d34d56ced814e2d48dc4e911455cc91e7f169a0d03105835c27959",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Vegetarian",
+      "createdAt": "2026-11-11T02:37:58.701Z"
+    },
+    {
+      "id": "77c52569-e51b-4e19-9410-37f8858c705c",
+      "name": "charishma",
+      "username": "cchari1234",
+      "salt": "328293c6c75d98ffd086221d78656bfe",
+      "passwordHash": "890859e9276701d4209f6c30630a7ca9f8b4c4b0cd68785214a636f6968489b2faec9f3a5ff5b2e237e52b68542b1978970ff498e9d498cdee2fe59ea698b741",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-11T02:40:12.609Z"
+    },
+    {
+      "id": "512f56e1-0a6e-4620-b84b-0cfed1a3d801",
+      "name": "princy",
+      "username": "princy1234",
+      "salt": "bd67c923561713987adf357c2e08e4ec",
+      "passwordHash": "a0ac177b8413599154432476ac15b66d7dacc95280739df4c1a3104f07b9fcf94e2f75b917db91751fa493b515a4718f99db8d0ce6e2e5d7c1bda2c3b806ec70",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-11T02:41:12.300Z"
+    },
+    {
+      "id": "12e95671-6e21-4d06-b498-7b99c94a50cb",
+      "name": "rubina banu",
+      "username": "rubi1234",
+      "salt": "eba40aaff0d51adfee88ba29d7b5fc23",
+      "passwordHash": "dd2e3cb85d4a358a8334c76ab592c564599cd82897c2b858f44a7f90ccee33def61fdba9a9788c94da79269b37a6fa89ef909cc4eb5546287b6aec5507e6561e",
+      "role": "student",
+      "hostel": "Alphonsa",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-11T02:41:54.947Z"
+    },
+    {
+      "id": "2ee3953b-5758-4c16-a442-8307277d2b4c",
+      "name": "fazil niyaz",
+      "username": "fazil1234",
+      "salt": "8169dc046232e3e78172b2054a92f8ab",
+      "passwordHash": "1279b96797bd94d1e0050083ab3b83d396169d15da6241ab398e4675a68decf43fa7952eabce62121f05c23a8ab6a4b3a600f20a7bbdf8f7fa84749dd762e951",
+      "role": "student",
+      "hostel": "Sophia",
+      "foodPreference": "Non-Vegetarian",
+      "createdAt": "2026-11-11T02:43:47.572Z"
+    },
+    {
+      "id": "f43c2481-c8c5-4220-82fb-33c22a85009e",
+      "name": "surendra",
+      "username": "suri1234",
+      "salt": "23d5ff0e4691273afe0948c40cdd3e33",
+      "passwordHash": "84a15eed3412e44290c4aa4387e5ada098cf1cd0b4787f4612a7f0b6981a347f407d8e7a64b7b828386006aefdfd8949f21cea2e319e197ba2b233113cc1bf09",
+      "role": "student",
+      "hostel": "Sophia",
+      "foodPreference": "Vegetarian",
+      "createdAt": "2026-11-11T02:44:19.201Z"
+    }
+  ],
+  "menus": [],
+  "feedback": [
+    {
+      "id": "8e5fe8cb-2a08-4fcf-a769-d027c6e45cf4",
+      "username": "suhail",
+      "name": "y.suhail",
+      "hostel": "Sophia",
+      "rating": 5,
+      "category": "Food Quality",
+      "feeling": "good",
+      "message": "good",
+      "date": "2026-11-09T05:34:57.425Z"
+    },
+    {
+      "id": "18df090d-43d9-4038-9b3a-946d0d8b3162",
+      "name": "fazil",
+      "username": "mdfazil",
+      "hostel": "Joseph",
+      "rating": 3,
+      "feeling": "Good",
+      "category": "Taste",
+      "message": "Food taste is not good. We are paying fees so heavy but they are not provide best quality food",
+      "date": "2026-11-10T15:50:10.718Z"
+    }
+  ],
+  "announcements": [],
+  "menu": [
+    {
+      "id": "c3ee7f64-bb4b-42a3-988f-07b526f02d1f",
+      "day": "Monday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Rice, Dal and Chapati",
+      "hostel": "All"
+    },
+    {
+      "id": "9411e7a2-5d59-4dd5-9a7a-4c246601854b",
+      "day": "Monday",
+      "meal": "Dinner",
+      "food": "[Both] Chicken Curry and Rice,paneer",
+      "hostel": "All"
+    },
+    {
+      "id": "a3723a85-f2ab-4dc7-9dbc-ffc663a5e873",
+      "day": "Tuesday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Dosa and Chutney",
+      "hostel": "All"
+    },
+    {
+      "id": "567cb4c6-fe2a-4703-8e6e-47252cc961b4",
+      "day": "Tuesday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Vegetable Pulao",
+      "hostel": "All"
+    },
+    {
+      "id": "c0422720-3d3c-4fb0-8759-f98aeecdd6cc",
+      "day": "Tuesday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Chapati and Paneer Curry",
+      "hostel": "All"
+    },
+    {
+      "id": "f2b8cfbc-dddc-4ac4-a990-aa219586c7be",
+      "day": "Wednesday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Poha",
+      "hostel": "All"
+    },
+    {
+      "id": "53ce4ca8-965e-4eb0-ba43-50f1e536e232",
+      "day": "Wednesday",
+      "meal": "Lunch",
+      "food": "[Both] Chicken Biryani,vegetable biryani",
+      "hostel": "All"
+    },
+    {
+      "id": "ca1d969b-e7b0-42e3-b867-fd5f435ac4dc",
+      "day": "Wednesday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Rice and Dal",
+      "hostel": "All"
+    },
+    {
+      "id": "18b8eb2a-93b5-4f57-baf6-ac680e75e3c7",
+      "day": "Thursday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Upma",
+      "hostel": "All"
+    },
+    {
+      "id": "093b0f46-fe0e-4263-9aea-c797279e012d",
+      "day": "Thursday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Rice and Sambar",
+      "hostel": "All"
+    },
+    {
+      "id": "3b91aa58-9673-47e1-9c90-954e67192950",
+      "day": "Thursday",
+      "meal": "Dinner",
+      "food": "[Both] Egg Curry and Rice,mushroom curry",
+      "hostel": "All"
+    },
+    {
+      "id": "f5db8127-6a5a-4d94-a0f0-5ce6eb7c068b",
+      "day": "Friday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Poori and Potato Curry",
+      "hostel": "All"
+    },
+    {
+      "id": "a2ec43b8-5832-45b5-9ec8-77dab8aa174c",
+      "day": "Friday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Rice and Vegetable Curry",
+      "hostel": "All"
+    },
+    {
+      "id": "6c8167f2-5131-4995-808c-e458e9046040",
+      "day": "Friday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Fried Rice",
+      "hostel": "All"
+    },
+    {
+      "id": "cb30f738-5568-4cf9-b2b1-caa850f9b4dc",
+      "day": "Saturday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Pongal",
+      "hostel": "All"
+    },
+    {
+      "id": "2971d95c-258e-4875-b75c-04836da335f4",
+      "day": "Saturday",
+      "meal": "Lunch",
+      "food": "[Both] Chicken Curry and Rice,paneer curry",
+      "hostel": "All"
+    },
+    {
+      "id": "6ca47caa-7c4f-4b65-8819-b5d2de821577",
+      "day": "Saturday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Chapati and Dal",
+      "hostel": "All"
+    },
+    {
+      "id": "ec4c244d-f924-41d2-a170-6ea81016bd67",
+      "day": "Sunday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Poori and Chana Masala",
+      "hostel": "All"
+    },
+    {
+      "id": "ac458bdc-f226-415b-a1ea-1dc4de4891f2",
+      "day": "Sunday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Vegetable Biryani",
+      "hostel": "All"
+    },
+    {
+      "id": "c53f93f4-9447-46ea-b02e-bf022ddca3f3",
+      "day": "Sunday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Paneer Curry and Rice",
+      "hostel": "All"
+    },
+    {
+      "id": "9f9d8840-fd0f-4de3-b7e5-79a413508663",
+      "day": "Monday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Samosa and Tea",
+      "hostel": "All"
+    },
+    {
+      "id": "5ec34f20-9c9c-4c66-976c-c3cd3ad47f48",
+      "day": "Tuesday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Veg Sandwich",
+      "hostel": "All"
+    },
+    {
+      "id": "ce327fec-b9d5-429b-bc12-5d92c9a347e7",
+      "day": "Wednesday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Bhel Puri",
+      "hostel": "All"
+    },
+    {
+      "id": "4df2a59f-73f4-4aa5-8e16-317f9eed9861",
+      "day": "Thursday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Onion Pakoda",
+      "hostel": "All"
+    },
+    {
+      "id": "4c0d59f4-2e3b-4d9d-a1b0-6c3f7ad5f4e5",
+      "day": "Friday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Vegetable Cutlet",
+      "hostel": "All"
+    },
+    {
+      "id": "2c41025c-df31-44fc-8ff2-aa22fb48c07b",
+      "day": "Saturday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Pav Bhaji",
+      "hostel": "All"
+    },
+    {
+      "id": "52e4038a-be27-4d94-9841-2f6b64acd9b7",
+      "day": "Sunday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Fruit Salad",
+      "hostel": "All"
+    },
+    {
+      "id": "375ad334-e286-48a5-802f-ed8a8c4f7d19",
+      "day": "Monday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] idly",
+      "hostel": "All"
+    }
+  ],
+  "admins": [
+    {
+      "id": "5076dd74-1350-40fd-96c1-5c8ab128a6c1",
+      "name": "messadmin",
+      "username": "messadmin",
+      "salt": "171a7c47d4075cca76c47dea5dd69871",
+      "passwordHash": "f6040b0240d087e6b72da12c072b54ab35fdfd045837f379ed453d27c10774e8418584c37dfc0e32343bf81140e6795324e4878dffbe6e28a65b875348767d01",
+      "role": "admin",
+      "createdAt": "2026-11-08T16:27:24.966Z"
+    }
+  ],
+  "awayRequests": [
+    {
+      "id": "9edef8c9-3cf1-4205-b19e-80a9afdda35d",
+      "studentId": "9da3d949-ab69-424c-bf5e-81984dcd5544",
+      "name": "y.suhail",
+      "username": "suhail",
+      "hostel": "Sophia",
+      "fromDate": "2026-11-11",
+      "toDate": "2026-11-14",
+      "meals": [
+        "Snacks",
+        "Lunch",
+        "Dinner"
+      ],
+      "status": "Approved",
+      "submittedAt": "2026-11-10T16:48:50.711Z",
+      "reviewedAt": "2026-11-10T16:49:22.938Z"
+    },
+    {
+      "id": "85ce54e5-b0fe-48dd-9ba3-6561d63d150f",
+      "studentId": "9da3d949-ab69-424c-bf5e-81984dcd5544",
+      "name": "y.suhail",
+      "username": "suhail",
+      "hostel": "Sophia",
+      "departureDateTime": "2026-11-12T18:38",
+      "returnDateTime": "2026-11-15T12:38",
+      "fromDate": "2026-11-12",
+      "toDate": "2026-11-15",
+      "meals": [
+        "Dinner",
+        "Breakfast",
+        "Snacks",
+        "Lunch"
+      ],
+      "status": "Approved",
+      "autoApproved": true,
+      "submittedAt": "2026-11-11T13:09:11.882Z",
+      "reviewedAt": "2026-11-11T13:09:11.882Z"
+    }
+  ],
+  "mealRegistrations": []
+}

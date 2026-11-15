@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+            ðŸ‘¨â€ðŸ’¼ ADMIN PANEL
+        </div>
+
+        <nav class="admin-nav">
+
+            <a href="admin.html" class="active">
+                ðŸ“Š Dashboard
+            </a>
+
+            <a href="dashboard.html">
+                ðŸ  User Dashboard
+            </a>
+
+            <a href="menu.html">
+                ðŸ› Manage Menu
+            </a>
+
+            <a href="feedback.html">
+                â­ Feedback
+            </a>
+
+            <a href="login.html"
+               onclick="logoutAdmin()">
+                ðŸšª Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+        <div class="admin-title">
+
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Mess Management Control Center</p>
+            </div>
+
+            <div class="admin-badge">
+                ðŸ” ADMIN
+            </div>
+
+        </div>
+
+
+        <section class="admin-stats">
+
+            <div class="admin-stat">
+                ðŸ‘¥ Total Users
+                <h2 id="userCount">0</h2>
+            </div>
+
+            <div class="admin-stat">
+                â­ Feedback
+                <h2 id="feedbackCount">0</h2>
+            </div>
+
+            <div class="admin-stat">
+                ðŸ› Menu Days
+                <h2>7</h2>
+            </div>
+
+            <div class="admin-stat">
+                ðŸ“Š Rating
+                <h2>4.3</h2>
+            </div>
+
+        </section>
+
+
+        <section class="admin-table-box">
+
+            <h2>ðŸ‘¥ Registered Users</h2>
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="usersTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <section class="admin-table-box">
+
+            <h2>â­ Recent Feedback</h2>
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Rating</th>
+                        <th>Feedback</th>
+                        <th>Date</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="feedbackTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿const { app, BrowserWindow, ipcMain } = require("electron");
+const path = require("path");
+
+const {
+    registerUser,
+    authenticateUser,
+    loadDatabase
+} = require("./database");
+
+const adminSessions = new Map();
+
+function createWindow() {
+    const mainWindow = new BrowserWindow({
+        width: 1200,
+        height: 800,
+        minWidth: 900,
+        minHeight: 650,
+        title: "Mess Management System",
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js"),
+            contextIsolation: true,
+            nodeIntegration: false
+        }
+    });
+
+    mainWindow.loadFile(path.join(__dirname, "src", "login.html"));
+
+    mainWindow.webContents.on("destroyed", () => {
+        adminSessions.delete(mainWindow.webContents.id);
+    });
+}
+
+ipcMain.handle("register-user", (event, details) => {
+    try {
+        return registerUser(details);
+    } catch (error) {
+        console.error("Registration error:", error);
+        return { success: false, message: "Registration failed." };
+    }
+});
+
+ipcMain.handle("login-user", (event, details) => {
+    try {
+        const result = authenticateUser(details.username, details.password);
+
+        if (result.success) {
+            adminSessions.set(
+                event.sender.id,
+                result.user.role || "student"
+            );
+        }
+
+        return result;
+    } catch (error) {
+        console.error("Login error:", error);
+        return { success: false, message: "Login failed." };
+    }
+});
+
+// Only an authenticated admin can retrieve registration reports.
+
+// SEPARATE ADMIN LOGIN
+const ADMIN_USERNAME = "messadmin";
+const ADMIN_PASSWORD = "MessAdmin@2026";
+
+ipcMain.handle("admin-login", (event, details) => {
+    const username = String(details.username || "").trim();
+    const password = String(details.password || "");
+
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+        adminSessions.set(event.sender.id, "admin");
+
+        return {
+            success: true,
+            message: "Admin login successful."
+        };
+    }
+
+    return {
+        success: false,
+        message: "Incorrect admin username or password."
+    };
+});
+ipcMain.handle("get-admin-summary", (event) => {
+    if (adminSessions.get(event.sender.id) !== "admin") {
+        return {
+            success: false,
+            message: "Admin access only."
+        };
+    }
+
+    try {
+        const data = loadDatabase();
+
+        const students = data.users.filter(
+            user => (user.role || "student") === "student"
+        );
+
+        const hostelNames = [
+            "Sophia",
+            "Cicily",
+            "Joseph",
+            "Alphonsa"
+        ];
+
+        const hostelCounts = {};
+
+        hostelNames.forEach(hostel => {
+            hostelCounts[hostel] = students.filter(
+                user => user.hostel === hostel
+            ).length;
+        });
+
+        return {
+            success: true,
+            total: students.length,
+            vegetarian: students.filter(
+                user => user.foodPreference === "Vegetarian"
+            ).length,
+            nonVegetarian: students.filter(
+                user => user.foodPreference === "Non-Vegetarian"
+            ).length,
+            hostelCounts,
+            students: students.map(user => ({
+                name: user.name,
+                username: user.username,
+                hostel: user.hostel,
+                foodPreference: user.foodPreference
+            }))
+        };
+    } catch (error) {
+        console.error("Admin report error:", error);
+        return {
+            success: false,
+            message: "Unable to load registration report."
+        };
+    }
+});
+
+ipcMain.handle("admin-logout", (event) => {
+    adminSessions.delete(event.sender.id);
+    return { success: true };
+});
+
+app.whenReady().then(() => {
+    createWindow();
+
+    app.on("activate", () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    });
+});
+
+app.on("window-all-closed", () => {
+    if (process.platform !== "darwin") {
+        app.quit();
+    }
+});
+

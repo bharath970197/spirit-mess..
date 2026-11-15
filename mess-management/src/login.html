@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mess, Feedback & Menu Management System | Login</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    min-height:100vh;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:linear-gradient(135deg,#022c22,#065f46,#047857);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.main{
+    width:100%;
+    max-width:1150px;
+    min-height:650px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 25px 65px #0004;
+}
+
+/* LEFT SIDE */
+
+.left{
+    background:linear-gradient(145deg,#064e3b,#047857,#059669);
+    padding:55px 50px;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-icon{
+    width:55px;
+    height:55px;
+    background:#ffffff24;
+    border:1px solid #ffffff44;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    font-size:28px;
+}
+
+.logo h2{font-size:20px}
+.logo p{
+    color:#bbf7d0;
+    font-size:11px;
+    letter-spacing:1.5px;
+    margin-top:5px;
+}
+
+.content{margin:55px 0}
+
+.tag{
+    display:inline-block;
+    padding:9px 15px;
+    background:#ffffff20;
+    border-radius:25px;
+    font-size:11px;
+    letter-spacing:1px;
+    margin-bottom:22px;
+}
+
+.content h1{
+    font-size:39px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.content h1 span{color:#a7f3d0}
+
+.content>p{
+    font-size:15px;
+    line-height:1.8;
+    color:#d1fae5;
+}
+
+.features{
+    margin-top:30px;
+    display:grid;
+    gap:17px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-size:14px;
+}
+
+.feature-icon{
+    width:39px;
+    height:39px;
+    background:#ffffff20;
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    font-size:19px;
+}
+
+.footer{
+    padding-top:20px;
+    border-top:1px solid #ffffff40;
+    color:#d1fae5;
+    font-size:12px;
+}
+
+/* RIGHT SIDE */
+
+.right{
+    padding:55px 65px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.heading{margin-bottom:38px}
+
+.heading small{
+    color:#059669;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.heading h1{
+    font-size:36px;
+    color:#064e3b;
+    margin:13px 0;
+}
+
+.heading p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.group{margin-bottom:23px}
+
+label{
+    display:block;
+    color:#334155;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:9px;
+}
+
+.input-box{position:relative}
+
+.input-box span{
+    position:absolute;
+    left:15px;
+    top:15px;
+    font-size:17px;
+}
+
+input{
+    width:100%;
+    height:52px;
+    padding:0 15px 0 46px;
+    border:1px solid #dbe4e1;
+    border-radius:9px;
+    background:#f8fafc;
+    outline:none;
+    font-size:14px;
+}
+
+input:focus{
+    border-color:#059669;
+    background:white;
+    box-shadow:0 0 0 4px #05966918;
+}
+
+.login-btn{
+    width:100%;
+    height:53px;
+    background:linear-gradient(135deg,#047857,#059669);
+    color:white;
+    border:0;
+    border-radius:9px;
+    font-size:15px;
+    font-weight:750;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+.login-btn:hover{background:#065f46}
+.login-btn:disabled{opacity:.6;cursor:not-allowed}
+
+#message{
+    display:none;
+    padding:12px;
+    margin-top:16px;
+    border-radius:8px;
+    text-align:center;
+    font-size:13px;
+}
+
+.signup{
+    margin-top:27px;
+    text-align:center;
+    color:#64748b;
+    font-size:14px;
+}
+
+.signup a{
+    color:#047857;
+    font-weight:800;
+    text-decoration:none;
+}
+
+.signup a:hover{text-decoration:underline}
+
+.security{
+    margin-top:42px;
+    text-align:center;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+@media(max-width:850px){
+    .main{grid-template-columns:1fr;max-width:520px}
+    .left{padding:35px;min-height:480px}
+    .right{padding:40px 35px}
+}
+
+@media(max-width:450px){
+    body{padding:12px}
+    .left,.right{padding:27px 22px}
+    .content h1{font-size:32px}
+    .heading h1{font-size:29px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+    <section class="left">
+
+        <div class="logo">
+            <div class="logo-icon">ðŸ½ï¸</div>
+            <div>
+                <h2>Campus Mess System</h2>
+                <p>SMART MESS â€¢ BETTER SERVICE</p>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="tag">MESS â€¢ MENU â€¢ FEEDBACK</div>
+
+            <h1>
+                Smart Mess<br>
+                <span>Feedback & Menu</span><br>
+                Management
+            </h1>
+
+            <p>
+                A complete campus platform to manage mess activities,
+                publish daily food menus and collect student feedback.
+                Making hostel dining more organized, transparent
+                and convenient.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">ðŸ›</div>
+                    <span>Daily breakfast, lunch and dinner menus</span>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">ðŸ’¬</div>
+                    <span>Student food quality and service feedback</span>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">ðŸ </div>
+                    <span>Hostel-based mess management</span>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">ðŸ“Š</div>
+                    <span>Organized administration and management</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            Â© 2026 Campus Mess System. All Rights Reserved.
+        </div>
+
+    </section>
+
+    <section class="right">
+
+        <div class="heading">
+            <small>STUDENT & ADMIN PORTAL</small>
+            <h1>Welcome Back!</h1>
+            <p>
+                Login to access the Mess, Feedback and Menu
+                Management System.
+            </p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="group">
+                <label for="username">Username</label>
+                <div class="input-box">
+                    <span>ðŸ‘¤</span>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required>
+                </div>
+            </div>
+
+            <div class="group">
+                <label for="password">Password</label>
+                <div class="input-box">
+                    <span>ðŸ”’</span>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required>
+                </div>
+            </div>
+
+            <button type="submit" class="login-btn">
+                Login to Your Account â†’
+            </button>
+
+            <div id="message" role="status"></div>
+
+        </form>
+
+        <div class="signup">
+            Don't have an account?
+            <a href="signup.html">Create Account</a>
+        </div>
+
+        <div class="security">
+            ðŸ” Secure Login | Campus Mess Management
+        </div>
+
+    </section>
+
+</div>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>

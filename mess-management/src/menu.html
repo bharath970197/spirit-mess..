@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Menu - Mess Management</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f0fdf4;
+    color: #14532d;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #14532d, #15803d);
+    color: white;
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 { font-size: 25px; }
+
+header a {
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,.15);
+    padding: 11px 18px;
+    border-radius: 8px;
+}
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 32px auto;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.heading h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.heading p { color: #64748b; }
+
+.controls {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+select {
+    padding: 11px;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    color: #14532d;
+    background: white;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.filter-btn {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #15803d;
+    color: white;
+}
+
+#menuGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.day-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #dcfce7;
+    box-shadow: 0 4px 14px rgba(0,0,0,.07);
+}
+
+.day-header {
+    background: linear-gradient(135deg, #166534, #16a34a);
+    color: white;
+    padding: 18px;
+}
+
+.day-header h3 { font-size: 22px; }
+.day-header p { margin-top: 5px; font-size: 13px; }
+
+.meal {
+    padding: 16px;
+    border-bottom: 1px solid #ecfdf5;
+}
+
+.meal:last-child { border-bottom: none; }
+.meal h4 { color: #166534; margin-bottom: 8px; }
+.meal p { color: #475569; line-height: 1.6; font-size: 14px; }
+
+.tag {
+    display: inline-block;
+    margin-top: 9px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.veg { background: #dcfce7; color: #166534; }
+.nonveg { background: #fee2e2; color: #b91c1c; }
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+@media(max-width: 600px) {
+    .controls { align-items: stretch; }
+    select { width: 100%; margin-top: 8px; }
+    .filter-btn { flex: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ðŸ½ï¸ Mess Management</h1>
+    <a href="dashboard.html">â† Dashboard</a>
+</header>
+
+<main class="container">
+
+    <section class="heading">
+        <h2>Weekly Food Menu</h2>
+        <p>View your hostel's daily breakfast, lunch, snacks and dinner.</p>
+    </section>
+
+    <section class="controls">
+
+        <div>
+            <label for="hostelSelect"><strong>Select Hostel:</strong></label>
+            <select id="hostelSelect">
+                <option value="Sophia">Sophia Hostel</option>
+                <option value="Cicily">Cicily Hostel</option>
+                <option value="Joseph">Joseph Hostel</option>
+                <option value="Alphonsa">Alphonsa Hostel</option>
+            </select>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Days</button>
+            <button class="filter-btn" data-filter="veg">Veg Days</button>
+            <button class="filter-btn" data-filter="nonveg">Non-Veg Days</button>
+        </div>
+
+    </section>
+
+    <section id="menuGrid">
+        <p>Loading weekly menu...</p>
+    </section>
+
+</main>
+
+<footer>
+    Â© 2026 Mess Management System | JOY University
+</footer>
+
+<script>
+"use strict";
+
+const weeklyMenu = [
+    {
+        day: "Monday", type: "veg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Idli, Sambar, Coconut Chutney", "veg"],
+            ["ðŸ› Lunch", "Rice, Dal, Paneer Curry, Vegetable Fry, Curd", "veg"],
+            ["â˜• Evening Snacks", "Banana and Tea", "veg"],
+            ["ðŸŒ™ Dinner", "Chapati, Vegetable Kurma, Rice", "veg"]
+        ]
+    },
+    {
+        day: "Tuesday", type: "nonveg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Poori, Potato Masala, Chutney", "veg"],
+            ["ðŸ› Lunch", "Rice, Chicken Curry, Egg, Vegetable Fry", "nonveg"],
+            ["â˜• Evening Snacks", "Samosa and Tea", "veg"],
+            ["ðŸŒ™ Dinner", "Chapati, Egg Curry, Rice", "nonveg"]
+        ]
+    },
+    {
+        day: "Wednesday", type: "nonveg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Dosa, Sambar, Coconut Chutney", "veg"],
+            ["ðŸ› Lunch", "Rice, Chicken Fry, Dal, Curd", "nonveg"],
+            ["â˜• Evening Snacks", "Sprouts and Buttermilk", "veg"],
+            ["ðŸŒ™ Dinner", "Chicken Biryani and Raita", "nonveg"]
+        ]
+    },
+    {
+        day: "Thursday", type: "veg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Pongal, Sambar, Chutney", "veg"],
+            ["ðŸ› Lunch", "Rice, Sambar, Potato Fry, Curd", "veg"],
+            ["â˜• Evening Snacks", "Biscuits and Milk", "veg"],
+            ["ðŸŒ™ Dinner", "Chapati, Paneer Curry, Rice", "veg"]
+        ]
+    },
+    {
+        day: "Friday", type: "veg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Upma and Coconut Chutney", "veg"],
+            ["ðŸ› Lunch", "Rice, Dal, Vegetable Fry, Rasam", "veg"],
+            ["â˜• Evening Snacks", "Boiled Corn and Tea", "veg"],
+            ["ðŸŒ™ Dinner", "Vegetable Pulao and Raita", "veg"]
+        ]
+    },
+    {
+        day: "Saturday", type: "veg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Pesarattu and Ginger Chutney", "veg"],
+            ["ðŸ› Lunch", "Rice, Sambar, Soya Chunks Curry, Curd", "veg"],
+            ["â˜• Evening Snacks", "Fruit Salad", "veg"],
+            ["ðŸŒ™ Dinner", "Chapati and Mixed Vegetable Curry", "veg"]
+        ]
+    },
+    {
+        day: "Sunday", type: "nonveg",
+        meals: [
+            ["ðŸŒ… Breakfast", "Masala Dosa, Sambar, Chutney", "veg"],
+            ["ðŸ› Lunch", "Chicken Biryani, Raita and Sweet", "nonveg"],
+            ["â˜• Evening Snacks", "Bajji and Tea", "veg"],
+            ["ðŸŒ™ Dinner", "Rice and Chicken Curry", "nonveg"]
+        ]
+    }
+];
+
+const menuGrid = document.getElementById("menuGrid");
+const hostelSelect = document.getElementById("hostelSelect");
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+let currentFilter = "all";
+
+function displayMenu() {
+    const hostel = hostelSelect.value;
+
+    const filtered = weeklyMenu.filter(day => {
+        if (currentFilter === "veg") return day.type === "veg";
+        if (currentFilter === "nonveg") return day.type === "nonveg";
+        return true;
+    });
+
+    menuGrid.innerHTML = filtered.map(day => {
+
+        const mealsHTML = day.meals.map(meal => {
+            const label = meal[2] === "nonveg" ? "NON-VEG" : "VEG";
+
+            return `
+                <div class="meal">
+                    <h4>${meal[0]}</h4>
+                    <p>${meal[1]}</p>
+                    <span class="tag ${meal[2]}">${label}</span>
+                </div>
+            `;
+        }).join("");
+
+        return `
+            <article class="day-card">
+                <div class="day-header">
+                    <h3>${day.day}</h3>
+                    <p>${hostel} Hostel</p>
+                    <p>${day.type === "nonveg"
+                        ? "Vegetarian + Non-Vegetarian"
+                        : "Vegetarian Only"}</p>
+                </div>
+                ${mealsHTML}
+            </article>
+        `;
+    }).join("");
+}
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        currentFilter = button.dataset.filter;
+        displayMenu();
+    });
+});
+
+hostelSelect.addEventListener("change", displayMenu);
+
+// Display menu immediately
+displayMenu();
+
+console.log("Weekly food menu loaded successfully.");
+</script>
+
+</body>
+</html>

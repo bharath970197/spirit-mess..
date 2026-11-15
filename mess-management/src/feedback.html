@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Feedback - Mess Management System</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body class="feedback-page">
+
+    <!-- =====================================================
+         TOP NAVIGATION
+         ===================================================== -->
+
+    <nav class="mess-menu-navbar">
+
+        <div class="mess-menu-logo">
+            ðŸ½ï¸ Mess Management
+        </div>
+
+        <div class="mess-menu-links">
+
+            <a href="dashboard.html">
+                ðŸ  Dashboard
+            </a>
+
+            <a href="menu.html">
+                ðŸ› Menu
+            </a>
+
+            <a href="feedback.html" class="active">
+                â­ Feedback
+            </a>
+
+            <a href="admin.html">
+                ðŸ‘¨â€ðŸ’¼ Admin
+            </a>
+
+            <a href="login.html" onclick="logout()">
+                ðŸšª Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         FEEDBACK CONTAINER
+         ===================================================== -->
+
+    <div class="feedback-wrapper">
+
+        <!-- LEFT SIDE -->
+
+        <div class="feedback-left">
+
+            <div style="font-size: 55px; margin-bottom: 20px;">
+                â­
+            </div>
+
+            <h1>
+                We Value Your Feedback
+            </h1>
+
+            <p>
+                Your feedback helps us improve the quality
+                of food and services provided in the mess.
+            </p>
+
+            <br>
+
+            <p>
+                Tell us about your experience with today's
+                meals and mess services.
+            </p>
+
+            <br>
+
+            <div>
+                ðŸ› Food Quality
+            </div>
+
+            <br>
+
+            <div>
+                ðŸ˜Š Service Experience
+            </div>
+
+            <br>
+
+            <div>
+                ðŸ’¡ Suggestions
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="feedback-right">
+
+            <h2>
+                Give Your Feedback
+            </h2>
+
+
+            <!-- FEEDBACK FORM -->
+
+            <form id="feedbackForm">
+
+
+                <!-- EMOJI -->
+
+                <label>
+                    How was your experience?
+                </label>
+
+                <div class="feedback-emojis">
+
+                    <button
+                        type="button"
+                        class="feedback-emoji"
+                        data-feeling="bad"
+                    >
+                        ðŸ˜ž
+                    </button>
+
+                    <button
+                        type="button"
+                        class="feedback-emoji"
+                        data-feeling="okay"
+                    >
+                        ðŸ˜
+                    </button>
+
+                    <button
+                        type="button"
+                        class="feedback-emoji"
+                        data-feeling="good"
+                    >
+                        ðŸ™‚
+                    </button>
+
+                    <button
+                        type="button"
+                        class="feedback-emoji"
+                        data-feeling="great"
+                    >
+                        ðŸ˜„
+                    </button>
+
+                    <button
+                        type="button"
+                        class="feedback-emoji"
+                        data-feeling="excellent"
+                    >
+                        ðŸ¤©
+                    </button>
+
+                </div>
+
+
+                <!-- STAR RATING -->
+
+                <label>
+                    Rate the mess
+                </label>
+
+                <div class="star-rating">
+
+                    <button
+                        type="button"
+                        data-rating="1"
+                    >
+                        â˜…
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="2"
+                    >
+                        â˜…
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="3"
+                    >
+                        â˜…
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="4"
+                    >
+                        â˜…
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="5"
+                    >
+                        â˜…
+                    </button>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <label>
+                    Feedback Category
+                </label>
+
+                <div class="feedback-category">
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="Food Quality"
+                    >
+                        ðŸ› Food Quality
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="Taste"
+                    >
+                        ðŸ˜‹ Taste
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="Cleanliness"
+                    >
+                        ðŸ§¹ Cleanliness
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="Service"
+                    >
+                        ðŸ™‹ Service
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="Menu"
+                    >
+                        ðŸ“‹ Menu
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="Other"
+                    >
+                        ðŸ’¡ Other
+                    </button>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <label for="feedbackText">
+                    Your Feedback
+                </label>
+
+                <textarea
+                    id="feedbackText"
+                    class="feedback-textarea"
+                    placeholder="Write your feedback here..."
+                ></textarea>
+
+
+                <!-- MESSAGE AREA -->
+
+                <div id="feedbackMessage"></div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="feedback-submit"
+                >
+                    â­ Submit Feedback
+                </button>
+
+
+                <!-- BACK BUTTON -->
+
+                <a
+                    href="dashboard.html"
+                    style="
+                        display:block;
+                        text-align:center;
+                        margin-top:15px;
+                        color:#be185d;
+                        font-weight:600;
+                    "
+                >
+                    â† Back to Dashboard
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/feedback.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+{
+  "users": [
+    {
+      "id": "1790005145380",
+      "name": "Mess Administrator",
+      "email": "admin@mess.local",
+      "password": "$2b$10$N4k4BbkGD66i7W3TcQZxFubKa0HlLlUDJG.MS43icU36mSLoX/192",
+      "role": "admin",
+      "createdAt": "2026-09-21T15:39:05.467Z"
+    },
+    {
+      "id": "b3817c88-df90-46af-9874-e7089f51237c",
+      "name": "y.suhail",
+      "username": "suhail",
+      "salt": "b4d11d58ef336cfdb8f70c61b09e4cde",
+      "passwordHash": "ad1731d7a9c0ab8e429f2655ee38dae755de0083d44079871f894eea4b220c2d7dafeee3f9417e43d966fb87f1acb432e6edecfd33dadd8a58b1ef5b9ac49ab7",
+      "role": "student",
+      "hostel": "Sophia",
+      "foodPreference": "Vegetarian",
+      "createdAt": "2026-11-11T16:27:44.856Z"
+    }
+  ],
+  "menus": [],
+  "feedback": [],
+  "announcements": [],
+  "menu": [
+    {
+      "id": "c3ee7f64-bb4b-42a3-988f-07b526f02d1f",
+      "day": "Monday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Rice, Dal and Chapati",
+      "hostel": "All"
+    },
+    {
+      "id": "9411e7a2-5d59-4dd5-9a7a-4c246601854b",
+      "day": "Monday",
+      "meal": "Dinner",
+      "food": "[Both] Chicken Curry and Rice,paneer",
+      "hostel": "All"
+    },
+    {
+      "id": "a3723a85-f2ab-4dc7-9dbc-ffc663a5e873",
+      "day": "Tuesday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Dosa and Chutney",
+      "hostel": "All"
+    },
+    {
+      "id": "567cb4c6-fe2a-4703-8e6e-47252cc961b4",
+      "day": "Tuesday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Vegetable Pulao",
+      "hostel": "All"
+    },
+    {
+      "id": "c0422720-3d3c-4fb0-8759-f98aeecdd6cc",
+      "day": "Tuesday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Chapati and Paneer Curry",
+      "hostel": "All"
+    },
+    {
+      "id": "f2b8cfbc-dddc-4ac4-a990-aa219586c7be",
+      "day": "Wednesday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Poha",
+      "hostel": "All"
+    },
+    {
+      "id": "53ce4ca8-965e-4eb0-ba43-50f1e536e232",
+      "day": "Wednesday",
+      "meal": "Lunch",
+      "food": "[Both] Chicken Biryani,vegetable biryani",
+      "hostel": "All"
+    },
+    {
+      "id": "ca1d969b-e7b0-42e3-b867-fd5f435ac4dc",
+      "day": "Wednesday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Rice and Dal",
+      "hostel": "All"
+    },
+    {
+      "id": "18b8eb2a-93b5-4f57-baf6-ac680e75e3c7",
+      "day": "Thursday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Upma",
+      "hostel": "All"
+    },
+    {
+      "id": "093b0f46-fe0e-4263-9aea-c797279e012d",
+      "day": "Thursday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Rice and Sambar",
+      "hostel": "All"
+    },
+    {
+      "id": "3b91aa58-9673-47e1-9c90-954e67192950",
+      "day": "Thursday",
+      "meal": "Dinner",
+      "food": "[Both] Egg Curry and Rice,mushroom curry",
+      "hostel": "All"
+    },
+    {
+      "id": "f5db8127-6a5a-4d94-a0f0-5ce6eb7c068b",
+      "day": "Friday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Poori and Potato Curry",
+      "hostel": "All"
+    },
+    {
+      "id": "a2ec43b8-5832-45b5-9ec8-77dab8aa174c",
+      "day": "Friday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Rice and Vegetable Curry",
+      "hostel": "All"
+    },
+    {
+      "id": "6c8167f2-5131-4995-808c-e458e9046040",
+      "day": "Friday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Fried Rice",
+      "hostel": "All"
+    },
+    {
+      "id": "cb30f738-5568-4cf9-b2b1-caa850f9b4dc",
+      "day": "Saturday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Pongal",
+      "hostel": "All"
+    },
+    {
+      "id": "2971d95c-258e-4875-b75c-04836da335f4",
+      "day": "Saturday",
+      "meal": "Lunch",
+      "food": "[Both] Chicken Curry and Rice,paneer curry",
+      "hostel": "All"
+    },
+    {
+      "id": "6ca47caa-7c4f-4b65-8819-b5d2de821577",
+      "day": "Saturday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Chapati and Dal",
+      "hostel": "All"
+    },
+    {
+      "id": "ec4c244d-f924-41d2-a170-6ea81016bd67",
+      "day": "Sunday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] Poori and Chana Masala",
+      "hostel": "All"
+    },
+    {
+      "id": "ac458bdc-f226-415b-a1ea-1dc4de4891f2",
+      "day": "Sunday",
+      "meal": "Lunch",
+      "food": "[Vegetarian] Vegetable Biryani",
+      "hostel": "All"
+    },
+    {
+      "id": "c53f93f4-9447-46ea-b02e-bf022ddca3f3",
+      "day": "Sunday",
+      "meal": "Dinner",
+      "food": "[Vegetarian] Paneer Curry and Rice",
+      "hostel": "All"
+    },
+    {
+      "id": "9f9d8840-fd0f-4de3-b7e5-79a413508663",
+      "day": "Monday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Samosa and Tea",
+      "hostel": "All"
+    },
+    {
+      "id": "5ec34f20-9c9c-4c66-976c-c3cd3ad47f48",
+      "day": "Tuesday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Veg Sandwich",
+      "hostel": "All"
+    },
+    {
+      "id": "ce327fec-b9d5-429b-bc12-5d92c9a347e7",
+      "day": "Wednesday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Bhel Puri",
+      "hostel": "All"
+    },
+    {
+      "id": "4df2a59f-73f4-4aa5-8e16-317f9eed9861",
+      "day": "Thursday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Onion Pakoda",
+      "hostel": "All"
+    },
+    {
+      "id": "4c0d59f4-2e3b-4d9d-a1b0-6c3f7ad5f4e5",
+      "day": "Friday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Vegetable Cutlet",
+      "hostel": "All"
+    },
+    {
+      "id": "2c41025c-df31-44fc-8ff2-aa22fb48c07b",
+      "day": "Saturday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Pav Bhaji",
+      "hostel": "All"
+    },
+    {
+      "id": "52e4038a-be27-4d94-9841-2f6b64acd9b7",
+      "day": "Sunday",
+      "meal": "Snacks",
+      "food": "[Vegetarian] Fruit Salad",
+      "hostel": "All"
+    },
+    {
+      "id": "375ad334-e286-48a5-802f-ed8a8c4f7d19",
+      "day": "Monday",
+      "meal": "Breakfast",
+      "food": "[Vegetarian] idly",
+      "hostel": "All"
+    }
+  ],
+  "admins": [
+    {
+      "id": "5076dd74-1350-40fd-96c1-5c8ab128a6c1",
+      "name": "messadmin",
+      "username": "messadmin",
+      "salt": "171a7c47d4075cca76c47dea5dd69871",
+      "passwordHash": "f6040b0240d087e6b72da12c072b54ab35fdfd045837f379ed453d27c10774e8418584c37dfc0e32343bf81140e6795324e4878dffbe6e28a65b875348767d01",
+      "role": "admin",
+      "createdAt": "2026-11-08T16:27:24.966Z"
+    }
+  ],
+  "awayRequests": [],
+  "mealRegistrations": []
+}

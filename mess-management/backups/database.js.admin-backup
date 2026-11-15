@@ -1,0 +1,137 @@
+
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+
+const DB_FILE = path.join(__dirname, "mess-database.json");
+
+function loadDatabase() {
+    if (!fs.existsSync(DB_FILE)) {
+        const initial = { users: [], feedback: [], menu: [] };
+        fs.writeFileSync(DB_FILE, JSON.stringify(initial, null, 2));
+        return initial;
+    }
+
+    const data = JSON.parse(fs.readFileSync(DB_FILE, "utf8"));
+
+    if (!Array.isArray(data.users)) data.users = [];
+    if (!Array.isArray(data.feedback)) data.feedback = [];
+    if (!Array.isArray(data.menu)) data.menu = [];
+
+    return data;
+}
+
+function saveDatabase(data) {
+    const temp = DB_FILE + ".tmp";
+    fs.writeFileSync(temp, JSON.stringify(data, null, 2), "utf8");
+    fs.renameSync(temp, DB_FILE);
+}
+
+function registerUser(details = {}) {
+    const name = String(details.name || "").trim();
+    const username = String(details.username || "").trim();
+    const password = String(details.password || "");
+    const hostel = String(details.hostel || "").trim();
+    const foodPreference = String(details.foodPreference || "").trim();
+
+    if (!name || !username || !password || !hostel || !foodPreference) {
+        return { success: false, message: "Please fill in all fields." };
+    }
+
+    if (username.length < 3) {
+        return { success: false, message: "Username must contain at least 3 characters." };
+    }
+
+    if (password.length < 6) {
+        return { success: false, message: "Password must contain at least 6 characters." };
+    }
+
+    if (!["Sophia", "Cicily", "Joseph", "Alphonsa"].includes(hostel)) {
+        return { success: false, message: "Select a valid hostel." };
+    }
+
+    if (!["Vegetarian", "Non-Vegetarian"].includes(foodPreference)) {
+        return { success: false, message: "Select a valid food preference." };
+    }
+
+    const data = loadDatabase();
+
+    const exists = data.users.some(
+        user => String(user.username).toLowerCase() === username.toLowerCase()
+    );
+
+    if (exists) {
+        return { success: false, message: "Username already exists. Choose another." };
+    }
+
+    const salt = crypto.randomBytes(16).toString("hex");
+    const passwordHash = crypto.scryptSync(password, salt, 64).toString("hex");
+
+    const user = {
+        id: crypto.randomUUID(),
+        name,
+        username,
+        salt,
+        passwordHash,
+        hostel,
+        foodPreference,
+        role: "student",
+        createdAt: new Date().toISOString()
+    };
+
+    data.users.push(user);
+    saveDatabase(data);
+
+    return {
+        success: true,
+        message: "Account created successfully!",
+        user: {
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            hostel: user.hostel,
+            foodPreference: user.foodPreference,
+            role: user.role
+        }
+    };
+}
+
+function authenticateUser(username, password) {
+    const data = loadDatabase();
+
+    const user = data.users.find(
+        item => String(item.username).toLowerCase() === String(username || "").trim().toLowerCase()
+    );
+
+    if (!user || !user.salt || !user.passwordHash) {
+        return { success: false, message: "Invalid username or password." };
+    }
+
+    const enteredHash = crypto.scryptSync(String(password || ""), user.salt, 64);
+    const storedHash = Buffer.from(user.passwordHash, "hex");
+
+    if (storedHash.length !== enteredHash.length ||
+        !crypto.timingSafeEqual(enteredHash, storedHash)) {
+        return { success: false, message: "Invalid username or password." };
+    }
+
+    return {
+        success: true,
+        message: "Login successful!",
+        user: {
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            hostel: user.hostel,
+            foodPreference: user.foodPreference,
+            role: user.role || "student"
+        }
+    };
+}
+
+module.exports = {
+    loadDatabase,
+    saveDatabase,
+    registerUser,
+    authenticateUser
+};

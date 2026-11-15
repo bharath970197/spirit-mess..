@@ -1,0 +1,24 @@
+Campus Mess Management System — QA report
+Date: 15 November 2026
+
+Checks completed:
+- Node.js syntax check passed for all 15 JavaScript files, including renderer scripts and archived backup scripts.
+- `npm run check` passed.
+- Database smoke test passed using an isolated copy of the database:
+  - Database loaded successfully.
+  - Daily meal report returned the expected four hostel sections.
+  - Invalid calendar date was rejected.
+- Existing application data was not modified by the smoke test.
+- Destructive utility `reset-students.js` was not run.
+
+Execution limitation:
+- The Electron runtime is declared in package.json but is not installed in this environment.
+- `npm ci` did not complete because package installation stalled; therefore the Electron desktop window and full end-to-end UI flows could not be launched or verified here.
+- No JavaScript syntax errors were found, so no source-code corrections were necessary based on the checks that could be run.
+
+To run locally:
+1. Install Node.js 20 or newer.
+2. Open a terminal in this folder.
+3. Run `npm ci`.
+4. Run `npm run check`.
+5. Run `npm start`.

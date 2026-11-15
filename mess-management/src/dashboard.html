@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard - Hostel Mess</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f0f7f2;
+    color: #14532d;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #14532d;
+    color: white;
+    padding: 25px 10px;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.profile {
+    background: rgba(255,255,255,.13);
+    border-radius: 13px;
+    padding: 17px;
+    margin-bottom: 25px;
+}
+
+.profile h3 {
+    margin-bottom: 5px;
+}
+
+.profile p {
+    font-size: 13px;
+    color: #d1fae5;
+}
+
+.nav a {
+    display: block;
+    padding: 15px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: #22c55e;
+    color: #14532d;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+}
+
+.topbar p {
+    color: #64748b;
+    margin-top: 7px;
+}
+
+.hostel-label {
+    background: #dcfce7;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #065f46, #0f766e);
+    color: white;
+    border-radius: 16px;
+    padding: 35px 32px;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    line-height: 1.7;
+    color: #ecfdf5;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    display: block;
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    border-left: 5px solid #16a34a;
+    box-shadow: 0 4px 12px rgba(0,0,0,.04);
+    text-decoration: none;
+    color: #14532d;
+    transition: .2s;
+}
+
+a.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.10);
+}
+
+.stat-card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 13px;
+}
+
+.stat-card h2 {
+    font-size: 25px;
+    color: #14532d;
+    overflow-wrap: anywhere;
+}
+
+.stat-card small {
+    display: block;
+    margin-top: 10px;
+    color: #15803d;
+}
+
+.food-section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.04);
+}
+
+.food-section h2 {
+    font-size: 24px;
+    margin-bottom: 22px;
+}
+
+.meals {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.meal-card {
+    background: #f0fdf4;
+    border: 1px solid #dcfce7;
+    border-radius: 13px;
+    padding: 18px;
+}
+
+.meal-card h3 {
+    font-size: 16px;
+    margin-bottom: 13px;
+    color: #166534;
+}
+
+.meal-card p {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.day-status {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 13px;
+    border-radius: 25px;
+    background: #dcfce7;
+    color: #166534;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.day-status.nonveg {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.action-btn {
+    padding: 12px 18px;
+    border-radius: 9px;
+    text-decoration: none;
+    background: #15803d;
+    color: white;
+    font-weight: bold;
+}
+
+.action-btn:hover {
+    background: #166534;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+@media(max-width: 1000px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main {
+        padding: 18px;
+    }
+
+    .stats,
+    .meals {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="logo">ðŸ½ï¸ HOSTEL MESS</div>
+
+        <div class="profile">
+            <h3 id="studentName">Student</h3>
+            <p>Hostel Student</p>
+        </div>
+
+        <nav class="nav">
+            <a href="dashboard.html" class="active">ðŸ  Dashboard</a>
+            <a href="menu.html">ðŸ½ï¸ Weekly Menu</a>
+            <a href="feedback.html">â­ Feedback</a>
+            <a href="login.html">ðŸ” Login</a>
+            <a href="admin.html">âš™ï¸ Admin</a>
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+            <div>
+                <h1>Student Dashboard</h1>
+                <p>Welcome to your hostel mess management system.</p>
+            </div>
+
+            <div class="hostel-label">
+                ðŸ  <span id="hostelName">Loading...</span>
+            </div>
+        </div>
+
+        <section class="welcome">
+            <h2>Welcome, <span id="welcomeName">Student</span>! ðŸ‘‹</h2>
+            <p>
+                Manage your hostel meals, view the complete weekly
+                food schedule and share your feedback with the mess
+                administration.
+            </p>
+        </section>
+
+        <!-- CLICKABLE MENU CARDS -->
+
+        <section class="stats">
+
+            <a href="menu.html?filter=all" class="stat-card">
+                <p>ðŸ—“ï¸ Weekly Schedule</p>
+                <h2>7 Days</h2>
+                <small>View complete weekly menu â†’</small>
+            </a>
+
+            <a href="menu.html?filter=veg" class="stat-card">
+                <p>ðŸ¥— Vegetarian Days</p>
+                <h2>4 Days</h2>
+                <small>View vegetarian days â†’</small>
+            </a>
+
+            <a href="menu.html?filter=nonveg" class="stat-card">
+                <p>ðŸ— Non-Vegetarian Days</p>
+                <h2>3 Days</h2>
+                <small>View non-vegetarian days â†’</small>
+            </a>
+
+            <div class="stat-card">
+                <p>ðŸ  Your Hostel</p>
+                <h2 id="hostelCard">Loading...</h2>
+            </div>
+
+        </section>
+
+        <!-- TODAY'S FOOD -->
+
+        <section class="food-section">
+
+            <h2>ðŸ² Today's Food Menu</h2>
+
+            <div class="meals">
+
+                <div class="meal-card">
+                    <h3>ðŸŒ… Breakfast</h3>
+                    <p id="breakfast">Loading...</p>
+                </div>
+
+                <div class="meal-card">
+                    <h3>ðŸ› Lunch</h3>
+                    <p id="lunch">Loading...</p>
+                </div>
+
+                <div class="meal-card">
+                    <h3>â˜• Evening Snacks</h3>
+                    <p id="snacks">Loading...</p>
+                </div>
+
+                <div class="meal-card">
+                    <h3>ðŸŒ™ Dinner</h3>
+                    <p id="dinner">Loading...</p>
+                </div>
+
+            </div>
+
+            <span class="day-status" id="dayStatus">VEG DAY</span>
+
+            <div class="actions">
+                <a href="menu.html" class="action-btn">
+                    View Complete Weekly Menu â†’
+                </a>
+
+                <a href="feedback.html" class="action-btn">
+                    Give Feedback
+                </a>
+            </div>
+
+        </section>
+
+        <footer>
+            Â© 2026 Mess Management System | JOY University
+        </footer>
+
+    </main>
+
+</div>
+
+<script>
+
+// ========================================
+// READ STUDENT INFORMATION
+// ========================================
+
+function readStudent() {
+
+    const keys = [
+        "currentUser",
+        "loggedInUser",
+        "user",
+        "student",
+        "messUser"
+    ];
+
+    for (const key of keys) {
+
+        const stored = localStorage.getItem(key);
+
+        if (!stored) continue;
+
+        try {
+            const data = JSON.parse(stored);
+
+            if (data && typeof data === "object") {
+                return data;
+            }
+        } catch (error) {
+            console.warn("Invalid user data:", key);
+        }
+    }
+
+    return {};
+}
+
+function getField(user, fields) {
+
+    for (const field of fields) {
+
+        if (user[field] !== undefined &&
+            user[field] !== null &&
+            String(user[field]).trim() !== "") {
+
+            return user[field];
+        }
+    }
+
+    return "";
+}
+
+function loadStudent() {
+
+    const user = readStudent();
+
+    const name = getField(user, [
+        "name",
+        "fullName",
+        "username",
+        "studentName",
+        "student_name"
+    ]);
+
+    const hostel = getField(user, [
+        "hostel",
+        "hostelName",
+        "hostel_name",
+        "hostelType",
+        "hostel_type"
+    ]);
+
+    const displayedName = name || "Student";
+    const displayedHostel = hostel || "Not available";
+
+    document.getElementById("studentName").textContent =
+        displayedName;
+
+    document.getElementById("welcomeName").textContent =
+        displayedName;
+
+    document.getElementById("hostelName").textContent =
+        displayedHostel;
+
+    document.getElementById("hostelCard").textContent =
+        displayedHostel;
+}
+
+// ========================================
+// WEEKLY FOOD SCHEDULE
+// ========================================
+
+const foodSchedule = {
+    Sunday: {
+        type: "nonveg",
+        breakfast: "Masala Dosa, Sambar, Chutney",
+        lunch: "Chicken Biryani, Raita and Sweet",
+        snacks: "Bajji and Tea",
+        dinner: "Rice and Chicken Curry"
+    },
+
+    Monday: {
+        type: "veg",
+        breakfast: "Idli, Sambar, Coconut Chutney",
+        lunch: "Rice, Dal, Paneer Curry, Vegetable Fry, Curd",
+        snacks: "Banana and Tea",
+        dinner: "Chapati, Vegetable Kurma, Rice"
+    },
+
+    Tuesday: {
+        type: "nonveg",
+        breakfast: "Poori, Potato Masala, Chutney",
+        lunch: "Rice, Chicken Curry, Egg, Vegetable Fry",
+        snacks: "Samosa and Tea",
+        dinner: "Chapati, Egg Curry, Rice"
+    },
+
+    Wednesday: {
+        type: "nonveg",
+        breakfast: "Dosa, Sambar, Coconut Chutney",
+        lunch: "Rice, Chicken Fry, Dal, Curd",
+        snacks: "Sprouts and Buttermilk",
+        dinner: "Chicken Biryani and Raita"
+    },
+
+    Thursday: {
+        type: "veg",
+        breakfast: "Pongal, Sambar, Chutney",
+        lunch: "Rice, Sambar, Potato Fry, Curd",
+        snacks: "Biscuits and Milk",
+        dinner: "Chapati, Paneer Curry, Rice"
+    },
+
+    Friday: {
+        type: "veg",
+        breakfast: "Upma and Coconut Chutney",
+        lunch: "Rice, Dal, Vegetable Fry, Rasam",
+        snacks: "Boiled Corn and Tea",
+        dinner: "Vegetable Pulao and Raita"
+    },
+
+    Saturday: {
+        type: "veg",
+        breakfast: "Pesarattu and Ginger Chutney",
+        lunch: "Rice, Sambar, Soya Chunks Curry, Curd",
+        snacks: "Fruit Salad",
+        dinner: "Chapati and Mixed Vegetable Curry"
+    }
+};
+
+// ========================================
+// DISPLAY TODAY'S MENU
+// ========================================
+
+function loadTodayMenu() {
+
+    const today = new Date().toLocaleDateString(
+        "en-US",
+        { weekday: "long" }
+    );
+
+    const menu = foodSchedule[today];
+
+    if (!menu) return;
+
+    document.getElementById("breakfast").textContent =
+        menu.breakfast;
+
+    document.getElementById("lunch").textContent =
+        menu.lunch;
+
+    document.getElementById("snacks").textContent =
+        menu.snacks;
+
+    document.getElementById("dinner").textContent =
+        menu.dinner;
+
+    const status = document.getElementById("dayStatus");
+
+    if (menu.type === "nonveg") {
+        status.textContent = "VEG + NON-VEG DAY";
+        status.classList.add("nonveg");
+    } else {
+        status.textContent = "VEG DAY";
+        status.classList.remove("nonveg");
+    }
+}
+
+// ========================================
+// INITIALIZE DASHBOARD
+// ========================================
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    loadStudent();
+    loadTodayMenu();
+
+    console.log("Dashboard loaded successfully.");
+
+});
+
+</script>
+
+</body>
+</html>
