@@ -12,3 +12,5 @@ services:
         value: production
       - key: SESSION_SECRET
         generateValue: true
+      - key: ADMIN_SETUP_KEY
+        generateValue: true
