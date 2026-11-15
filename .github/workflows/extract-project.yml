@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '88888.zip'
   workflow_dispatch:
 
 permissions:
@@ -24,6 +26,7 @@ jobs:
           node --check mess-management/server.js
           node --check mess-management/src/js/web-adapter.js
           node --check mess-management/src/js/feedback-web.js
+          node --check mess-management/src/js/admin-setup.js
 
       - name: Commit extracted project and web configuration
         run: |
