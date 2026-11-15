@@ -6,6 +6,7 @@ const fs = require("fs");
 const db = require("./database");
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 10000;
 const ROOT = __dirname;
 app.disable("x-powered-by");
