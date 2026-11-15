@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const crypto = require("crypto");
+const fs = require("fs");
 const db = require("./database");
 
 const app = express();
@@ -100,7 +101,15 @@ app.get("/", (req,res)=>res.redirect("/login.html"));
 app.get("/*.html", (req,res,next)=>{
   const page = path.basename(req.path);
   const file = path.join(ROOT,"src",page);
-  res.sendFile(file, err => { if (err) next(); });
+  fs.readFile(file,"utf8",(err,html)=>{
+    if(err) return next(err);
+    if(page==="feedback.html") html=html.replace(/<script[^>]*src=["']js\/feedback\.js["'][^>]*><\/script>/i,"");
+    const scripts = page==="feedback.html"
+      ? '<script src="/js/web-adapter.js"></script><script src="/js/feedback-web.js"></script>'
+      : '<script src="/js/web-adapter.js"></script>';
+    html=html.replace("</body>",scripts+"</body>");
+    res.type("html").send(html);
+  });
 });
 app.use(express.static(path.join(ROOT,"src")));
 app.get("*",(req,res)=>res.status(404).send("Page not found"));
